@@ -60,7 +60,6 @@ def display_as_percentage(val):
 daily_return_a = 0.001
 monthly_return_b = 0.022
 
-# Write code here
 ### To calculate adjusted (usally annualized) log rate of return, you mutiply the log rate of return, by the number of original time periods that are in the new time period.
       #EX: New rate of return = log-rate-of-return * 12 if we want to find out the annual rate of return for an investment where we initially calculated the log rate of return over a 1 month period.
 
