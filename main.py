@@ -1,14 +1,24 @@
 import numpy as np
 import pandas as pd
+import matplotlib as plt
 from math import log
 
-#For compound_interest_calc
-  #p = Principal Balance
-  #r = Rate (given in decimal form, ie. 3% should be written as .03)
-  #n = Number of times the rate is applied during the time period
-  #t = number of time periods elapsed
-#This version returns a dictionary with years and the updated principal balance for each year. This version of the function
-#   does not take in any additional input payments, it just tracks the growth of the principal.
+# For the simple interest calculator:
+# p = Principal Balance
+# r = Interest Rate (in decimal format)
+# t = Time in Years (if years is the chosen unit)
+def simple_interest_calc(p, r ,t):
+  return p * r * t
+
+
+
+# For compound_interest_calc
+    #p = Principal Balance
+    #r = Rate (given in decimal form, ie. 3% should be written as .03)
+    #n = Number of times the rate is applied during the time period
+    #t = number of time periods elapsed
+# This version returns a dictionary with years and the updated principal balance for each year. This version of the function
+#  does not take in any additional input payments, it just tracks the growth of the principal and interest.
 
 def compound_interest_calc(p, r, n, t):
   salary_table = {}
@@ -60,6 +70,7 @@ def display_as_percentage(val):
 daily_return_a = 0.001
 monthly_return_b = 0.022
 
+# Write code here
 ### To calculate adjusted (usally annualized) log rate of return, you mutiply the log rate of return, by the number of original time periods that are in the new time period.
       #EX: New rate of return = log-rate-of-return * 12 if we want to find out the annual rate of return for an investment where we initially calculated the log rate of return over a 1 month period.
 
@@ -87,6 +98,15 @@ def display_as_percentage(val):
 display_as_percentage = lambda val: '{}%'.format(str(round(val * 100, 1)))
 
 print(display_as_percentage(rate_of_return))
+
+
+def return_on_investment(earnings, initial_investment):
+  return (earnings-initial_investment) / initial_investment
+
+print('The ROI is', return_on_investment(47,984))
+
+def variance(list):
+  for i in range(len(list)):
 
 
 
